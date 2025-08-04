@@ -1,9 +1,11 @@
 # RAG_HealthcareProject
 
-As Thailand transitions into an aging society, the demand on medical personnel continues to grow, 
-raising concerns about long-term healthcare capacity. 
-To help address this challenge, we developed an AI agent system designed to assist medical professionals by providing contextual, 
-accurate responses using Retrieval-Augmented Generation (RAG) technology.  Our AI agent can be applied in various healthcare-related scenarios, such as answering patient queries, assisting with medical documentation, and supporting decision-making—all based on domain-specific data.  
+As Thailand transitions into an aging society, the demand on medical personnel continues to grow, raising concerns about long-term healthcare capacity. 
+
+To help address this challenge, we developed an AI agent system designed to assist medical professionals by providing contextual, accurate responses using Retrieval-Augmented Generation (RAG) technology.
+  
+Our AI agent can be applied in various healthcare-related scenarios, such as answering patient queries, assisting with medical documentation, and supporting decision-making—all based on domain-specific data.  
+
 This system uses RAG (Retrieval-Augmented Generation) to ground AI responses in a custom knowledge base, allowing for flexible, updatable, and context-aware answers. By enriching the AI with more relevant data, its performance and accuracy improve over time. 
 
 <h2> GET STARTED </h2>
