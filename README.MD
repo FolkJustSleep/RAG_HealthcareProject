@@ -41,3 +41,16 @@ or using Postman you can sent JSON like this
     "question" : "your-quesion"
 }
 ```
+
+# Docker
+
+if you have dependencies problem you can run docker-compose 
+
+```
+docker-compose up --build
+```
+
+To check, is docker are running
+```
+docker ps
+```
