@@ -28,6 +28,17 @@ Install Dependencies
 pip install -r requirments.txt
 ```
 
+if this have issue you can install 
+
+```
+pip install chromadb
+pip install langchain-community
+pip install openai
+pip install pypdf
+pip install python-dotenv
+pip install pydantic
+```
+
 Run server
 
 ```
