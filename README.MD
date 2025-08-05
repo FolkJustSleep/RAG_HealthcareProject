@@ -61,7 +61,7 @@ or using Postman you can sent JSON like this
 }
 ```
 
-# Docker
+<h2> Docker (if needed) </h2>
 
 if you have dependencies problem you can run docker-compose 
 
