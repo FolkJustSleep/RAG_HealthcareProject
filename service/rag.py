@@ -13,11 +13,6 @@ import time
 
 # Load environment variables
 load_dotenv()
-# hunggingface_key = os.getenv("HF_TOKEN")  # Hugging Face token for embedding
-# client = openai.OpenAI(
-#     api_key="sk-DmbMLFXsAWYQkCkxDTmuLHeVssgnbbVT9lxKneY5YMNi5UNu",
-#     base_url="https://api.opentyphoon.ai/v1"
-# )
 # llm = ChatOpenAI(model= "typhoon2-8b-instruct",api_key="dummy", base_url="http://localhost:5555/v1")
 llm = ChatOpenAI(model="typhoon-v2-70b-instruct", temperature=0.1, api_key=os.getenv("OPENAI_API_KEY"), base_url="https://api.opentyphoon.ai/v1")  
 # markdown = ocr_document('data', base_url='https://api.opentyphoon.ai/v1', api_key=os.getenv("OPENAI_API_KEY"))
@@ -204,14 +199,20 @@ Original Question:
         print(" Initial answer was sufficient.")
         return initial_answer
 
-# while True:
-#             user_input = input("You: ")
-#             if user_input.lower() == "exit" or user_input.lower() == "quit":
-#                 break
-#             response = generate_answer_with_feedback(messages)
-#             try:
-#                 parsed = AnswerOutput.model_validate_json(response)
-#             except Exception as e:
-#                 print(f"Error parsing response: {e}")
-#                 parsed = {"answer": "Invalid response format", "reason": str(e)}
-#             print(f"Answer: {parsed.answer}\nReason: {parsed.reason}")
+if __name__ == "__main__":
+    from pydantic import BaseModel, Field
+    class AnswerOutput(BaseModel):
+        answer: str = Field(description="The answer to the question.")
+        reason: str = Field(description="The reason for the answer.")
+
+    while True:
+                user_input = input("You: ")
+                if user_input.lower() == "exit" or user_input.lower() == "quit":
+                    break
+                response = generate_answer_with_feedback(user_input)
+                try:
+                    parsed = AnswerOutput.model_validate_json(response)
+                except Exception as e:
+                    print(f"Error parsing response: {e}")
+                    parsed = {"answer": "Invalid response format", "reason": str(e)}
+                print(f"Answer: {parsed.answer}\nReason: {parsed.reason}")
