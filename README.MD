@@ -60,3 +60,8 @@ or using Postman you can sent JSON like this
     "question" : "your-quesion"
 }
 ```
+
+you can run rag alone without api call by 
+```
+python service/rag.py
+```

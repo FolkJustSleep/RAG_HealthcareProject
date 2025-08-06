@@ -1,7 +1,6 @@
 #contexual retrival with prompt chaning feedback and reduce latency
 import chromadb
 from chromadb.utils.embedding_functions import EmbeddingFunction
-from openai import OpenAI
 from dotenv import load_dotenv
 from langchain_community.document_loaders import PyPDFDirectoryLoader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
@@ -16,7 +15,6 @@ load_dotenv()
 # llm = ChatOpenAI(model= "typhoon2-8b-instruct",api_key="dummy", base_url="http://localhost:5555/v1")
 llm = ChatOpenAI(model="typhoon-v2-70b-instruct", temperature=0.1, api_key=os.getenv("OPENAI_API_KEY"), base_url="https://api.opentyphoon.ai/v1")  
 
-#client = OpenAI(api_key=openai_key)
 hf_client = InferenceClient(
     provider="hf-inference",
     api_key=os.getenv("HF_TOKEN"),  # Hugging Face token for embedding
