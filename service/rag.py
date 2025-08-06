@@ -9,13 +9,12 @@ from langchain_community.chat_models import ChatOpenAI
 from huggingface_hub import InferenceClient
 import os
 import hashlib
-import time
+
 
 # Load environment variables
 load_dotenv()
 # llm = ChatOpenAI(model= "typhoon2-8b-instruct",api_key="dummy", base_url="http://localhost:5555/v1")
 llm = ChatOpenAI(model="typhoon-v2-70b-instruct", temperature=0.1, api_key=os.getenv("OPENAI_API_KEY"), base_url="https://api.opentyphoon.ai/v1")  
-# markdown = ocr_document('data', base_url='https://api.opentyphoon.ai/v1', api_key=os.getenv("OPENAI_API_KEY"))
 
 #client = OpenAI(api_key=openai_key)
 hf_client = InferenceClient(
